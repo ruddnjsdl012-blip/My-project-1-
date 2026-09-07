@@ -7,11 +7,15 @@ using UnityEngine;
 // - 재정의: 부모에게 물려 받은 메서드를 상황에 맞게 재정의(오버라이딩) 하여 사용 가능
 public class Cat : Animal
 {
+    static public int Count = 0;
+    
     public Cat(string name, float height, float weight)
     {
         _name = name;
         _height = height;
         _weight = weight;
+
+        Count++; // 고양이가 생성 될 떄마다 클래스의 정적 변수 count 를 up!
     }
 
     public override void Introduce()
